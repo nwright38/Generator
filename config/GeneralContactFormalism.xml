@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<alg_conf>
+
+<!--
+Configuration for the local Fermi gas model
+
+Configurable Parameters:
+.............................................................................................................
+Name                   Type    Optional   Comment                                        Default
+.............................................................................................................
+FermiMomentumTable     string   No        Table of Fermi momentum (kF) constants         CommonParam[FermiGas]
+LFG-MomentumCutOff     double   No        momentum cut off value
+SRC-Fraction           double   Yes       Fraction of high energy tail distribution      0. (Local Fermi Gas)
+                                          dominated by Short Range Correlated Pairs
+-->
+
+  <param_set name="Default">
+    <param type="string" name="CommonParam"> FermiGas </param>
+    <param type="string" name="UniversalFunction-pn0"> AV18_pn0.txt </param>
+    <param type="string" name="UniversalFunction-pp0"> AV18_pp0.txt </param>
+    <param type="string" name="UniversalFunction-pn1"> AV18_pn1.txt </param>
+    <param type="string" name="UniversalFunction-nn0"> AV18_pp0.txt </param>
+    <param type="double" name="Contact-pn1"> 0. </param>
+    <param type="double" name="Contact-nn0"> 0. </param>
+    <param type="double" name="Contact-pp0"> 0. </param>
+    <param type="double" name="Contact-pn0"> 0. </param>
+
+    <!-- CutOff known from electron scattering experiments
+     Short range correlations and the isospin dependence of nuclear correlation functions (arXiv:1710.07966)-->
+    <param type="double" name = "LFG-MomentumCutOff">    0.7   </param>
+
+  </param_set>
+
+  <param_set name="D">
+    <param type="double" name="Contact-pn1"> .04764 </param>
+  </param_set>
+
+  <param_set name="3H">
+    <param type="double" name="Contact-pn1"> 0.06441 </param>
+    <param type="double" name="Contact-nn0"> 0.00590 </param>
+    <param type="double" name="Contact-pn0"> 0.00311 </param>
+  </param_set>
+
+  <param_set name="3He">
+    <param type="vec-double" name="Contacts" delim=";"> 
+    <param type="double" name="Contact-pn1"> 0.06249 </param>
+    <param type="double" name="Contact-pp0"> 0.00570 </param>
+    <param type="double" name="Contact-pn0"> 0.00325 </param>
+  </param_set>
+
+
+  <param_set name="4He">
+    <param type="double" name="Contact-pn1"> 0.12274 </param>
+    <param type="double" name="Contact-nn0"> 0.00655 </param>
+    <param type="double" name="Contact-pp0"> 0.00655 </param>
+    <param type="double" name="Contact-pn0"> 0.00687 </param>
+  </param_set>
+
+
+  <param_set name="6Li">
+    <param type="double" name="Contact-pn1"> 0.10492 </param>
+    <param type="double" name="Contact-nn0"> 0.00485 </param>
+    <param type="double" name="Contact-pp0"> 0.00485 </param>
+    <param type="double" name="Contact-pn0"> 0.00529 </param>
+  </param_set>
+
+  <param_set name="12C">
+    <param type="double" name="Contact-pn1"> 0.15876 </param>
+    <param type="double" name="Contact-nn0"> 0.01140 </param>
+    <param type="double" name="Contact-pp0"> 0.01140 </param>
+    <param type="double" name="Contact-pn0"> 0.01244 </param>
+  </param_set>
+
+  <param_set name="160">
+    <param type="double" name="Contact-pn1"> 0.11372 </param>
+    <param type="double" name="Contact-nn0"> 0.00676 </param>
+    <param type="double" name="Contact-pp0"> 0.00676 </param>
+    <param type="double" name="Contact-pn0"> 0.00676 </param>
+  </param_set>
+
+  <param_set name="40Ca">
+    <param type="double" name="Contact-pn1"> 0.11570 </param>
+    <param type="double" name="Contact-nn0"> 0.00723 </param>
+    <param type="double" name="Contact-pp0"> 0.00723 </param>
+    <param type="double" name="Contact-pn0"> 0.00723 </param>
+  </param_set>
+
+  
+
+
+
+</alg_conf>
+
